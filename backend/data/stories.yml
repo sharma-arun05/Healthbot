@@ -1,0 +1,23 @@
+version: "3.1"
+
+stories:
+- story: dengue symptoms
+  steps:
+  - intent: ask_symptom
+  - action: action_provide_symptom_info
+
+- story: vaccine info
+  steps:
+  - intent: ask_vaccine
+  - action: action_provide_vaccine_info
+
+- story: preventive measures
+  steps:
+  - intent: preventive_measures
+  - action: action_provide_prevention
+
+- story: start subscription form
+  steps:
+  - intent: ask_subscribe
+  - action: subscription_form
+  - active_loop: subscription_form

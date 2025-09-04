@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>HealthBot — Frontend Dashboard</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="app-header">
+        <h1>HealthBot Dashboard</h1>
+        <p class="muted">Manage and send real-time alerts to subscribers.</p>
+      </header>
+
+      <section class="panel subscribers-panel">
+        <h2 class="panel-title">Subscribers</h2>
+        <div class="controls">
+          <button id="refresh" class="btn primary-btn">Refresh</button>
+        </div>
+        <ul id="subscribers" class="list"></ul>
+      </section>
+
+      <section class="panel alerts-panel">
+        <h2 class="panel-title">Send Alert</h2>
+        <textarea id="message" rows="4" placeholder="Enter alert message" class="form-control"></textarea>
+        <div class="controls">
+          <button id="send" class="btn primary-btn">Send to all subscribers</button>
+        </div>
+        <pre id="result" class="result"></pre>
+      </section>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

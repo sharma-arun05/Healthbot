@@ -1,0 +1,10 @@
+{
+  "0": "ask_subscribe",
+  "1": "ask_symptom",
+  "2": "ask_vaccine",
+  "3": "goodbye",
+  "4": "greet",
+  "5": "inform",
+  "6": "preventive_measures",
+  "7": "set_language"
+}

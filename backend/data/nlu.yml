@@ -1,0 +1,77 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hi
+    - hello
+    - hey
+    - good morning
+    - namaste (नमस्ते)
+    - vanakkam (வணக்கம்)
+
+- intent: goodbye
+  examples: |
+    - bye
+    - see you
+    - goodbye
+    - alvida (अलविदा)
+    - pirak sandhippom (பிறகு சந்திப்போம்)
+
+- intent: ask_symptom
+  examples: |
+    - What are the symptoms of dengue?
+    - How can I know if I have malaria?
+    - Fever and headache what disease could it be?
+    - What are the symptoms of COVID?
+    - dengue ke lakshan kya hai? (डेंगू के लक्षण क्या हैं?)
+    - malaria ke lakshan batao (मलेरिया के लक्षण बताओ)
+    - கோவிட் நோயின் அறிகுறிகள் என்ன? (What are the symptoms of COVID?)
+    - டெங்கு காய்ச்சலின் அறிகுறிகள்? (dengue fever symptoms?)
+
+- intent: ask_vaccine
+  examples: |
+    - Which vaccines are recommended for children under 5?
+    - Tell me about vaccination schedule
+    - Which vaccines are for adults?
+    - बच्चों के लिए कौन सी टीके हैं? (Which vaccines are for children?)
+    - टीकाकरण का शेड्यूल क्या है? (What is the vaccination schedule?)
+    - குழந்தைகளுக்கு தடுப்பூசி அட்டவணை என்ன? (What is the vaccination schedule for children?)
+    - பெரியவர்களுக்கான தடுப்பூசி எவை? (Which vaccines are for adults?)
+
+- intent: preventive_measures
+  examples: |
+    - How to prevent malaria?
+    - How to avoid dengue?
+    - how to avoid getting sick?
+    - How to stay healthy?
+    - malaria se kaise bache? (मलेरिया से कैसे बचें?)
+    - டெங்குவை எப்படி தடுப்பது? (How to prevent dengue?)
+
+- intent: ask_subscribe
+  examples: |
+    - I want to subscribe to health alerts
+    - Please send me real-time outbreak alerts
+    - can I get a notification?
+    - Subscribe me to alerts for my area.
+    - मुझे अलर्ट चाहिए (I want alerts)
+    - எனக்கு எச்சரிக்கை செய்தி அனுப்பவும் (Send me an alert message)
+
+- intent: set_language
+  examples: |
+    - I want to talk in Hindi
+    - Let's use English
+    - Switch to Tamil
+    - हिंदी में बात करो
+    - தமிழில் பேசலாம்
+
+- intent: inform
+  examples: |
+    - my phone number is 9876543210
+    - I am from Chennai
+    - my age is 35
+    - I live in rural area
+    - my number is 1234567890
+    - मेरा नंबर 1234567890 है (My number is 1234567890)
+    - நான் சென்னையில் வசிக்கிறேன் (I live in Chennai)
+    - நான் கிராமப்புறத்தில் வசிப்பவர் (I am a resident of a rural area)

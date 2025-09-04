@@ -1,0 +1,131 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - ask_symptom
+  - ask_vaccine
+  - preventive_measures
+  - ask_subscribe
+  - inform
+  - set_language
+  - stop
+
+entities:
+  - disease
+  - location
+  - phone_number
+  - language_entity
+
+slots:
+  language:
+    type: text
+    influence_conversation: false
+  location:
+    type: text
+    influence_conversation: true
+  phone_number:
+    type: text
+    influence_conversation: true
+
+forms:
+  subscription_form:
+    required_slots:
+      - phone_number
+      - location
+
+responses:
+  utter_greet:
+  - text: "Hello! I am HealthBot 🤖. How can I help you today?"
+  - text: "नमस्ते! मैं हेल्थबोट हूँ 🤖। मैं आपकी कैसे मदद कर सकता हूँ?"
+  - text: "வணக்கம்! நான் ஹெல்த்போட் 🤖. நான் இன்று உங்களுக்கு எப்படி உதவ முடியும்?"
+
+  utter_goodbye:
+  - text: "Goodbye! Stay healthy 👋"
+  - text: "अलविदा! स्वस्थ रहें 👋"
+  - text: "மீண்டும் சந்திப்போம்! ஆரோக்கியமாக இருங்கள் 👋"
+
+  utter_ask_disease_en:
+  - text: "Which disease are you asking about?"
+  utter_ask_disease_hi:
+  - text: "आप किस बीमारी के बारे में पूछ रहे हैं?"
+  utter_ask_disease_ta:
+  - text: "நீங்கள் எந்த நோயைப் பற்றி கேட்கிறீர்கள்?"
+
+  utter_ask_phone_number_en:
+  - text: "Please provide your phone number to subscribe to alerts."
+  utter_ask_phone_number_hi:
+  - text: "अलर्ट के लिए अपना फोन नंबर बताएं।"
+  utter_ask_phone_number_ta:
+  - text: "விழிப்பூட்டல்களுக்கு குழுசேர உங்கள் தொலைபேசி எண்ணை வழங்கவும்."
+
+  utter_ask_location_en:
+  - text: "What is your location?"
+  utter_ask_location_hi:
+  - text: "आपका स्थान क्या है?"
+  utter_ask_location_ta:
+  - text: "உங்கள் இருப்பிடம் என்ன?"
+
+  utter_symptom_info_en:
+  - text: "Symptoms for {disease}: {summary}"
+  utter_symptom_info_hi:
+  - text: "{disease} के लक्षण: {summary}"
+  utter_symptom_info_ta:
+  - text: "{disease}க்கான அறிகுறிகள்: {summary}"
+
+  utter_vaccine_info_en:
+  - text: "Vaccination schedule: {schedule_info}"
+  utter_vaccine_info_hi:
+  - text: "टीकाकरण अनुसूची: {schedule_info}"
+  utter_vaccine_info_ta:
+  - text: "தடுப்பூசி அட்டவணை: {schedule_info}"
+
+  utter_prevention_info_en:
+  - text: "General prevention: {summary}"
+  utter_prevention_info_hi:
+  - text: "सामान्य रोकथाम: {summary}"
+  utter_prevention_info_ta:
+  - text: "பொதுவான தடுப்பு: {summary}"
+
+  utter_subscription_success_en:
+  - text: "Subscribed {phone_number} to alerts for {location}. You will receive a text message if there is an outbreak."
+  utter_subscription_success_hi:
+  - text: "{location} के लिए {phone_number} को अलर्ट से जोड़ा गया है। यदि कोई प्रकोप होता है तो आपको एक टेक्स्ट संदेश मिलेगा।"
+  utter_subscription_success_ta:
+  - text: "{location}க்கான விழிப்பூட்டல்களுக்கு {phone_number} என்ற எண் சேர்க்கப்பட்டது. ஒரு நோய் பரவல் ஏற்பட்டால் உங்களுக்கு செய்தி கிடைக்கும்."
+
+  utter_subscription_failure_en:
+  - text: "I was unable to subscribe you. Please try again later."
+  utter_subscription_failure_hi:
+  - text: "मैं आपको सब्सक्राइब नहीं कर पाया। कृपया बाद में पुनः प्रयास करें।"
+  utter_subscription_failure_ta:
+  - text: "உங்களை குழுசேர்க்க முடியவில்லை. தயவுசெய்து பின்னர் மீண்டும் முயற்சிக்கவும்."
+
+  utter_api_failure_en:
+  - text: "I couldn't fetch the official information right now. Please try again later."
+  utter_api_failure_hi:
+  - text: "मैं अभी आधिकारिक जानकारी नहीं ला पाया। कृपया बाद में पुनः प्रयास करें।"
+  utter_api_failure_ta:
+  - text: "என்னால் அதிகாரப்பூர்வ தகவலைப் பெற முடியவில்லை. பின்னர் மீண்டும் முயற்சிக்கவும்."
+
+  utter_language_set_en:
+  - text: "Language switched to English."
+  utter_language_set_hi:
+  - text: "भाषा हिंदी में बदल दी गई है।"
+  utter_language_set_ta:
+  - text: "மொழி தமிழ் மொழிக்கு மாற்றப்பட்டது."
+
+  utter_no_data_found_en:
+  - text: "I could not find specific information for that query."
+  utter_no_data_found_hi:
+  - text: "मुझे उस प्रश्न के लिए कोई विशिष्ट जानकारी नहीं मिल पाई।"
+  utter_no_data_found_ta:
+  - text: "அந்தக் கேள்விக்கான குறிப்பிட்ட தகவலை என்னால் கண்டுபிடிக்க முடியவில்லை।"
+
+actions:
+  - action_set_language
+  - action_provide_symptom_info
+  - action_provide_vaccine_info
+  - action_provide_prevention
+  - action_subscribe_alerts
+  - subscription_form
