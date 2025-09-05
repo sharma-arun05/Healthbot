@@ -9,6 +9,9 @@ nlu:
     - good morning
     - namaste (नमस्ते)
     - vanakkam (வணக்கம்)
+    - hi there
+    - hey bot
+    - pranam (प्रणाम)
 
 - intent: goodbye
   examples: |
@@ -17,6 +20,9 @@ nlu:
     - goodbye
     - alvida (अलविदा)
     - pirak sandhippom (பிறகு சந்திப்போம்)
+    - talk to you later
+    - see you soon
+    - shukriya, bye
 
 - intent: ask_symptom
   examples: |
@@ -34,6 +40,8 @@ nlu:
     - What are the symptoms of chickenpox?
     - How do I know if I have the measles?
     - I feel sick, what are the signs of the fever?
+    - signs of tuberculosis
+    - headache + vomiting what disease is it?
 
 - intent: ask_vaccine
   examples: |
@@ -44,6 +52,9 @@ nlu:
     - टीकाकरण का शेड्यूल क्या है? (What is the vaccination schedule?)
     - குழந்தைகளுக்கு தடுப்பூசி அட்டவணை என்ன? (What is the vaccination schedule for children?)
     - பெரியவர்களுக்கான தடுப்பூசி எவை? (Which vaccines are for adults?)
+    - Where can I check vaccination schedule?
+    - What vaccines should I take at 18?
+    - Is COVID vaccine still available?
 
 - intent: preventive_measures
   examples: |
@@ -53,6 +64,9 @@ nlu:
     - How to stay healthy?
     - malaria se kaise bache? (मलेरिया से कैसे बचें?)
     - டெங்குவை எப்படி தடுப்பது? (How to prevent dengue?)
+    - give me prevention tips for flu
+    - what are safety measures for cholera?
+    - steps to avoid typhoid
 
 - intent: ask_subscribe
   examples: |
@@ -62,6 +76,9 @@ nlu:
     - Subscribe me to alerts for my area.
     - मुझे अलर्ट चाहिए (I want alerts)
     - எனக்கு எச்சரிக்கை செய்தி அனுப்பவும் (Send me an alert message)
+    - I want daily updates
+    - Notify me if a new outbreak happens
+    - add me to health alerts list
 
 - intent: set_language
   examples: |
@@ -70,6 +87,9 @@ nlu:
     - Switch to Tamil
     - हिंदी में बात करो
     - தமிழில் பேசலாம்
+    - please reply in Hindi
+    - answer in English
+    - change language to Tamil
 
 - intent: inform
   examples: |
@@ -79,5 +99,28 @@ nlu:
     - I live in rural area
     - my number is 1234567890
     - मेरा नंबर 1234567890 है (My number is 1234567890)
+    - मैं दिल्ली में रहता हूं (I live in Delhi)
     - நான் சென்னையில் வசிக்கிறேன் (I live in Chennai)
     - நான் கிராமப்புறத்தில் வசிப்பவர் (I am a resident of a rural area)
+    - my pincode is 600001
+    - I am from Punjab
+
+- intent: ask_vaccination_centers
+  examples: |
+    - Where can I get vaccinated?
+    - nearest vaccine center?
+    - Show me COVID vaccination sites near me
+    - मुझे वैक्सीन कहाँ मिलेगी? (Where can I get the vaccine?)
+    - தடுப்பூசி மையம் எங்கு உள்ளது? (Where is the vaccination center?)
+    - vaccine centers in Delhi
+    - list hospitals for vaccination
+
+- intent: ask_outbreak_alerts
+  examples: |
+    - Any new disease outbreaks?
+    - Tell me about recent health alerts
+    - Are there new COVID cases?
+    - My area में कोई epidemic है? (Is there any epidemic in my area?)
+    - சமீபத்திய நோய் பரவல்கள் என்ன? (What are the recent outbreaks?)
+    - latest flu cases
+    - update on dengue outbreak

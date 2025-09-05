@@ -7,6 +7,8 @@ intents:
   - ask_vaccine
   - preventive_measures
   - ask_subscribe
+  - ask_vaccination_centers
+  - ask_outbreak_alerts
   - inform
   - set_language
   - stop
@@ -16,6 +18,7 @@ entities:
   - location
   - phone_number
   - language_entity
+  - pincode
 
 slots:
   language:
@@ -25,6 +28,12 @@ slots:
     type: text
     influence_conversation: true
   phone_number:
+    type: text
+    influence_conversation: true
+  pincode:
+    type: text
+    influence_conversation: true
+  disease:
     type: text
     influence_conversation: true
 
@@ -45,6 +54,7 @@ responses:
   - text: "अलविदा! स्वस्थ रहें 👋"
   - text: "மீண்டும் சந்திப்போம்! ஆரோக்கியமாக இருங்கள் 👋"
 
+  ## Symptom responses
   utter_ask_disease_en:
   - text: "Which disease are you asking about?"
   utter_ask_disease_hi:
@@ -52,6 +62,30 @@ responses:
   utter_ask_disease_ta:
   - text: "நீங்கள் எந்த நோயைப் பற்றி கேட்கிறீர்கள்?"
 
+  utter_symptom_info_en:
+  - text: "Symptoms for {disease}: {summary}"
+  utter_symptom_info_hi:
+  - text: "{disease} के लक्षण: {summary}"
+  utter_symptom_info_ta:
+  - text: "{disease}க்கான அறிகுறிகள்: {summary}"
+
+  ## Vaccine responses
+  utter_vaccine_info_en:
+  - text: "Vaccination schedule: {schedule_info}"
+  utter_vaccine_info_hi:
+  - text: "टीकाकरण अनुसूची: {schedule_info}"
+  utter_vaccine_info_ta:
+  - text: "தடுப்பூசி அட்டவணை: {schedule_info}"
+
+  ## Prevention
+  utter_prevention_info_en:
+  - text: "General prevention: {summary}"
+  utter_prevention_info_hi:
+  - text: "सामान्य रोकथाम: {summary}"
+  utter_prevention_info_ta:
+  - text: "பொதுவான தடுப்பு: {summary}"
+
+  ## Subscription (forms)
   utter_ask_phone_number_en:
   - text: "Please provide your phone number to subscribe to alerts."
   utter_ask_phone_number_hi:
@@ -66,48 +100,29 @@ responses:
   utter_ask_location_ta:
   - text: "உங்கள் இருப்பிடம் என்ன?"
 
-  utter_symptom_info_en:
-  - text: "Symptoms for {disease}: {summary}"
-  utter_symptom_info_hi:
-  - text: "{disease} के लक्षण: {summary}"
-  utter_symptom_info_ta:
-  - text: "{disease}க்கான அறிகுறிகள்: {summary}"
-
-  utter_vaccine_info_en:
-  - text: "Vaccination schedule: {schedule_info}"
-  utter_vaccine_info_hi:
-  - text: "टीकाकरण अनुसूची: {schedule_info}"
-  utter_vaccine_info_ta:
-  - text: "தடுப்பூசி அட்டவணை: {schedule_info}"
-
-  utter_prevention_info_en:
-  - text: "General prevention: {summary}"
-  utter_prevention_info_hi:
-  - text: "सामान्य रोकथाम: {summary}"
-  utter_prevention_info_ta:
-  - text: "பொதுவான தடுப்பு: {summary}"
-
   utter_subscription_success_en:
-  - text: "Subscribed {phone_number} to alerts for {location}. You will receive a text message if there is an outbreak."
+  - text: "Subscribed {phone_number} to alerts for {location}. You will receive outbreak updates."
   utter_subscription_success_hi:
-  - text: "{location} के लिए {phone_number} को अलर्ट से जोड़ा गया है। यदि कोई प्रकोप होता है तो आपको एक टेक्स्ट संदेश मिलेगा।"
+  - text: "{location} के लिए {phone_number} को अलर्ट से जोड़ा गया है। आपको अपडेट मिलेंगे।"
   utter_subscription_success_ta:
-  - text: "{location}க்கான விழிப்பூட்டல்களுக்கு {phone_number} என்ற எண் சேர்க்கப்பட்டது. ஒரு நோய் பரவல் ஏற்பட்டால் உங்களுக்கு செய்தி கிடைக்கும்."
+  - text: "{location}க்கான விழிப்பூட்டல்களுக்கு {phone_number} சேர்க்கப்பட்டது. உங்களுக்கு எச்சரிக்கை வரும்."
 
   utter_subscription_failure_en:
   - text: "I was unable to subscribe you. Please try again later."
   utter_subscription_failure_hi:
   - text: "मैं आपको सब्सक्राइब नहीं कर पाया। कृपया बाद में पुनः प्रयास करें।"
   utter_subscription_failure_ta:
-  - text: "உங்களை குழுசேர்க்க முடியவில்லை. தயவுசெய்து பின்னர் மீண்டும் முயற்சிக்கவும்."
+  - text: "உங்களை குழுசேர்க்க முடியவில்லை. பின்னர் மீண்டும் முயற்சிக்கவும்."
 
+  ## API fallback
   utter_api_failure_en:
-  - text: "I couldn't fetch the official information right now. Please try again later."
+  - text: "I couldn't fetch official information right now. Please try again later."
   utter_api_failure_hi:
   - text: "मैं अभी आधिकारिक जानकारी नहीं ला पाया। कृपया बाद में पुनः प्रयास करें।"
   utter_api_failure_ta:
   - text: "என்னால் அதிகாரப்பூர்வ தகவலைப் பெற முடியவில்லை. பின்னர் மீண்டும் முயற்சிக்கவும்."
 
+  ## Language switch
   utter_language_set_en:
   - text: "Language switched to English."
   utter_language_set_hi:
@@ -115,6 +130,7 @@ responses:
   utter_language_set_ta:
   - text: "மொழி தமிழ் மொழிக்கு மாற்றப்பட்டது."
 
+  ## No data fallback
   utter_no_data_found_en:
   - text: "I could not find specific information for that query."
   utter_no_data_found_hi:
@@ -122,10 +138,23 @@ responses:
   utter_no_data_found_ta:
   - text: "அந்தக் கேள்விக்கான குறிப்பிட்ட தகவலை என்னால் கண்டுபிடிக்க முடியவில்லை।"
 
+  ## New features
+  utter_vaccination_centers_en:
+  - text: "Here are vaccination centers near {location}: {centers}"
+  utter_outbreak_alerts_en:
+  - text: "Recent health alerts for {location}: {alerts}"
+
 actions:
   - action_set_language
   - action_provide_symptom_info
   - action_provide_vaccine_info
   - action_provide_prevention
   - action_subscribe_alerts
+  - action_get_vaccination_centers
+  - action_get_outbreak_alerts
+  - action_store_user_info
   - subscription_form
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
