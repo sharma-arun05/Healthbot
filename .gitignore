@@ -1,4 +1,29 @@
-venv/ 
-models/ 
-*.db 
-__pycache__/ 
+# Virtual environment
+venv/
+
+# Rasa generated files
+models/
+results/
+logs/
+*.log
+
+# Databases
+*.db
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Secrets
+.env
+credentials.yml
+
+# IDE/editor files
+.vscode/
+.idea/
+
+# OS-specific
+.DS_Store
+Thumbs.db
